@@ -1,3 +1,4 @@
+from linkedin_user import LinkedinUser
 from selenium import webdriver
 from time import sleep
 import pandas as pd
@@ -90,8 +91,7 @@ class SeleniumScraper():
         Returns a pandas DataFrame for each user.
         """
         logging.info("Scraping data from {}...".format(linkedin_url))
-        self.driver.get(linkedin_url)
-        df = pd.DataFrame()
+        user = LinkedinUser(linkedin_url)
         
     def generate_data(self):
         """
